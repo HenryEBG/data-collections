@@ -70,12 +70,28 @@ for(i=1;i<savedArray.length;i++){
   for(j=0;j<columnQuantity;j++){
    objectArray[i-1][columnheader[j].toLowerCase()]=savedArray[i][j]
   }
-  
-  
-  //objectArray[i]=objectItem.assign()
 }
 
 console.log(objectArray)
+
+/**
+ * Exercise No. 4
+ */
+
+objectArray.pop()
+objectArray.splice(1,0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" })
+objectArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
+
+console.log(objectArray)
+
+let averageAge=0;
+for(i=0;i<objectArray.length;i++){
+  averageAge+=parseInt(objectArray[i].age)
+}
+averageAge=averageAge/objectArray.length
+console.log(`The average age is : ${averageAge} `)
+
+
 
 
 
