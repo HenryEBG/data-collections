@@ -41,7 +41,7 @@ lines=strVar.split("\n")
 cells=lines[0].split(",")
 console.log(`We have a quantity of: ${cells}`)
 //we check the quantity of columns the title row has
-lineQuantity=cells.length
+columnQuantity=cells.length
 console.log(columnQuantity)
 
 for(i=0;i<lines.length;i++){
@@ -54,6 +54,28 @@ for(i=0;i<lines.length;i++){
 }
 console.log(`This is the 2D array`)
 console.log(savedArray)
+
+
+/**
+ * Exercise No. 3
+ */
+
+//I will use the savedArray from exercise 2
+//console.log(savedArray.length)
+let columnheader=savedArray[0]
+let objectArray=[]
+
+for(i=1;i<savedArray.length;i++){
+  objectArray[i-1]={}
+  for(j=0;j<columnQuantity;j++){
+   objectArray[i-1][columnheader[j].toLowerCase()]=savedArray[i][j]
+  }
+  
+  
+  //objectArray[i]=objectItem.assign()
+}
+
+console.log(objectArray)
 
 
 
