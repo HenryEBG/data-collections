@@ -20,4 +20,40 @@ for(i=0;i<lines.length;i++){
 }
 
 
+/**
+ * Exercise No. 2
+ */
+
+//initial string
+//initial string
+strVar="ID,Name,Occupation,Age\n42,Bruce,Knight,41,otherthing\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
+//initialize rows array
+lines=[]
+//initialize columns array
+cells=[]
+//initialize 2D array
+savedArray=[]
+//initialize 
+let columnQuantity
+//separate the string in an array.  
+lines=strVar.split("\n")
+//first task.  Know how many columns are in the title row
+cells=lines[0].split(",")
+console.log(`We have a quantity of: ${cells}`)
+//we check the quantity of columns the title row has
+lineQuantity=cells.length
+console.log(columnQuantity)
+
+for(i=0;i<lines.length;i++){
+  cells=lines[i].split(",")
+  //if for some reason the lines after the title has more columns we can truncate the array
+ if(cells.length>columnQuantity){
+  cells.length=columnQuantity
+ }
+  savedArray.push(cells)
+}
+console.log(`This is the 2D array`)
+console.log(savedArray)
+
+
 
