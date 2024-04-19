@@ -13,12 +13,13 @@ let cells=[] //array to temporary save an array
 
 //separate the string in an array.  
 lines=strVar.split("\n")
-
+console.log(lines)
 //separate every line in cells and printed
 for(i=0;i<lines.length;i++){  
   cells=lines[i].split(",")
   console.log(` ${cells[0]} ${cells[1]} ${cells[2]} ${cells[3]}`)
 }
+
 
 
 /**
@@ -76,6 +77,7 @@ console.log(`*************************`)
 let columnheader=savedArray[0]
 let objectArray=[]
 
+//I made a double loop to tranlate every line in an object and every column in a key value 
 for(i=1;i<savedArray.length;i++){
   objectArray[i-1]={}
   for(j=0;j<columnQuantity;j++){
@@ -93,16 +95,21 @@ console.log(`*************************`)
 console.log(`****  Exercise No. 4 ****`)
 console.log(`*************************`)
 
+//delete the last object of the array
 objectArray.pop()
+//Adding an object in the index 1
 objectArray.splice(1,0,{ id: "48", name: "Barry", occupation: "Runner", age: "25" })
+//Adding an object at the end of the array
 objectArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
 
 console.log(objectArray)
 
 let averageAge=0;
+//sum all the ages
 for(i=0;i<objectArray.length;i++){
   averageAge+=parseInt(objectArray[i].age)
 }
+//calculate the average age
 averageAge=averageAge/objectArray.length
 console.log(`The average age is : ${averageAge} `)
 
@@ -121,9 +128,9 @@ console.log(`*************************`)
 //using Object.keys we can get the keys to be the first part of our string
 let stringReverse=''
 
-//crear los titulos
+//Adding keys at the beginning of the string
 stringReverse=Object.keys(objectArray[0]).toString()
-//recorrer el array de objetos y tomar los datos
+//Adding values after the titles and adding a \n between every line
 for(i=1; i<objectArray.length;i++){
   stringReverse+='\\n'
   stringReverse+=Object.values(objectArray[i]).toString()
